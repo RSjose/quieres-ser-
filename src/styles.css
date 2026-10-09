@@ -1,14 +1,16 @@
 *{
     margin: 0;
+    box-sizing: border-box; /* Evita que el padding deforme las medidas */
 }
 
 body{
     background-image: linear-gradient(135deg,#00e7d4, #505488, #ef3f80, #161569, #ef3f80, #505488, #00E7D4 );
     background-size: 500%;
     animation: fanimado 60s infinite;
+    overflow-x: hidden; /* Evita que la pantalla se mueva hacia los lados en celular */
 }
-.contenedor{
 
+.contenedor{
     width: 100vw;
     height: 100vh;
     text-align: center;
@@ -23,6 +25,7 @@ p{
 button{
     font-size: xx-large;
     padding: 0.75em;
+    cursor: pointer;
 }
 
 #yesBtn{
@@ -35,6 +38,7 @@ button{
     border: 2px solid white;
     box-shadow: inset 0 0 5px red, 0 0 10px red;
     text-align: center;
+    color: white; /* Asegura que el texto resalte */
 }
 
 #noBtn{
@@ -46,13 +50,13 @@ button{
     padding: 20px;
     border: 2px solid white;
     box-shadow: inset 0 0 5px red, 0 0 10px red;
+    color: white;
 }
 
 @keyframes animat {
     0% {
         transform: scale(0);
     }
-
     100% {
         transform: scale(1);
     }
@@ -73,163 +77,127 @@ button{
 .container {
     box-shadow: inset 0 0 5px red, 0 0 10px red;
     border-radius: 60px;
-
     margin: auto;
     text-align: center;
     color: white;
-  }
+}
 
 .letra-neon {
     font-family: "Dancing Script", cursive;
     margin: 0;
     font-size: 50px;
     text-shadow: 0 0 5px red, 0 0 15px red, 0 0 30px red, 0 0 50px red;
-  }
+}
 
-  .neon3 {
+.neon3 {
     font-family: monospace;
     margin: 0;
     padding: 10px;
     font-size: 30px;
     text-shadow: 0 0 5px white, 0 0 15px white, 0 0 30px white;
-  }
+}
 
-  .flicker1 {
+.flicker1 {
     animation: parpadear 2s infinite backwards steps(3);
-  }
-  .flicker2 {
+}
+.flicker2 {
     animation: parpadear 2.5s infinite backwards steps(4);
-  }
-  .flicker3 {
+}
+.flicker3 {
     animation: parpadear 1.5s infinite backwards steps(2);
-  }
+}
 
-  @keyframes parpadear {
+@keyframes parpadear {
     to {
-      color: gray;
-      text-shadow: none;
+        color: gray;
+        text-shadow: none;
     }
-  }
+}
 
-  /* burbujas */
-
+/* burbujas */
 .burbuja{
-  border-radius: 50%;
-  background: #fff;
-  opacity: .3;
-
-  position: absolute;
-  bottom: -150;
-  
-  animation: burbujas 3s linear infinite ;
+    border-radius: 50%;
+    background: #fff;
+    opacity: .3;
+    position: absolute;
+    bottom: -150px; /* Corregido: faltaba el 'px' */
+    animation: burbujas 3s linear infinite ;
 }
 
-.burbuja:nth-child(1){
-  width: 80px;
-  height: 80px;
-  left: 5%;
-  animation-duration: 3s;
-  animation-delay: 3s;
-}
-
-.burbuja:nth-child(2){
-  width: 100px;
-  height: 100px;
-  left: 35%;
-  animation-duration: 3s;
-  animation-delay: 5s;
-}
-
-.burbuja:nth-child(3){
-  width: 20px;
-  height: 20px;
-  left: 15%;
-  animation-duration: 1.5s;
-  animation-delay: 7s;
-}
-
-.burbuja:nth-child(4){
-  width: 50px;
-  height: 50px;
-  left: 90%;
-  animation-duration: 6s;
-  animation-delay: 3s;
-}
-
-.burbuja:nth-child(5){
-  width: 70px;
-  height: 70px;
-  left: 65%;
-  animation-duration: 3s;
-  animation-delay: 1s;
-}
-
-.burbuja:nth-child(6){
-  width: 20px;
-  height: 20px;
-  left: 50%;
-  animation-duration: 4s;
-  animation-delay: 5s;
-}
-
-.burbuja:nth-child(7){
-  width: 20px;
-  height: 20px;
-  left: 50%;
-  animation-duration: 4s;
-  animation-delay: 5s;
-}
-
-.burbuja:nth-child(8){
-  width: 100;
-  height: 100px;
-  left: 52%;
-  animation-duration: 5s;
-  animation-delay: 5s;
-}
-
-.burbuja:nth-child(9){
-  width: 65px;
-  height: 65px;
-  left: 51%;
-  animation-duration: 3s;
-  animation-delay: 2s;
-}
-
-.burbuja:nth-child(10){
-  width: 40px;
-  height: 40px;
-  left: 35%;
-  animation-duration: 3s;
-  animation-delay: 4s;
-}
-
+.burbuja:nth-child(1){ width: 80px; height: 80px; left: 5%; animation-duration: 3s; animation-delay: 3s; }
+.burbuja:nth-child(2){ width: 100px; height: 100px; left: 35%; animation-duration: 3s; animation-delay: 5s; }
+.burbuja:nth-child(3){ width: 20px; height: 20px; left: 15%; animation-duration: 1.5s; animation-delay: 7s; }
+.burbuja:nth-child(4){ width: 50px; height: 50px; left: 90%; animation-duration: 6s; animation-delay: 3s; }
+.burbuja:nth-child(5){ width: 70px; height: 70px; left: 65%; animation-duration: 3s; animation-delay: 1s; }
+.burbuja:nth-child(6){ width: 20px; height: 20px; left: 50%; animation-duration: 4s; animation-delay: 5s; }
+.burbuja:nth-child(7){ width: 20px; height: 20px; left: 50%; animation-duration: 4s; animation-delay: 5s; }
+.burbuja:nth-child(8){ width: 100px; height: 100px; left: 52%; animation-duration: 5s; animation-delay: 5s; }
+.burbuja:nth-child(9){ width: 65px; height: 65px; left: 51%; animation-duration: 3s; animation-delay: 2s; }
+.burbuja:nth-child(10){ width: 40px; height: 40px; left: 35%; animation-duration: 3s; animation-delay: 4s; }
 
 @keyframes burbujas{
-  0%{
-      bottom: 0;
-      opacity: 0;
-  }
-  30%{
-      transform: translateX(30px);
-  }
-  50%{
-      opacity: .4;
-  }
-  100%{
-      bottom: 100vh;
-      opacity: 0;
-  }
+    0%{ bottom: 0; opacity: 0; }
+    30%{ transform: translateX(30px); }
+    50%{ opacity: .4; }
+    100%{ bottom: 100vh; opacity: 0; }
 }
 
 @keyframes movimiento{
-  0%{
-      transform: translateY(0);
-  }
-  50%{
-      transform: translateY(30px);
-  }
-  100%{
-      transform: translateY(0);
-  }
+    0%{ transform: translateY(0); }
+    50%{ transform: translateY(30px); }
+    100%{ transform: translateY(0); }
+}
+
+/* =================================================== */
+/* AJUSTES EXCLUSIVOS PARA PANTALLAS DE CELULARES */
+/* =================================================== */
+@media screen and (max-width: 768px) {
+    /* Ajusta el título principal para que no se desborde */
+    .letra-neon {
+        font-size: 32px !important;
+    }
+
+    /* Modifica el contenedor de los botones para poder ordenarlos */
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        min-height: 100vh;
+        padding: 20px 10px;
+    }
+
+    /* Redimensiona la imagen para pantallas móviles */
+    div img {
+        width: 60% !important; 
+        max-width: 220px;
+        margin: 15px auto;
+    }
+
+    /* RE-DISEÑO PARA EL BOTÓN SIII */
+    #yesBtn {
+        transform: none !important; /* Elimina el desplazamiento de PC */
+        width: 70% !important;       /* Deja de ser 10% y toma un ancho cómodo */
+        font-size: 1.5rem !important; /* Reduce la letra xx-large */
+        padding: 12px !important;     /* Reduce el grosor exagerado */
+        margin: 15px auto !important; /* Lo centra y lo separa de los demás elementos */
+        display: block !important;
+    }
+
+    /* RE-DISEÑO PARA EL BOTÓN NO */
+    #noBtn {
+        position: relative !important; /* Deja de flotar sobre otros elementos */
+        width: 70% !important;         /* Toma el mismo ancho que el botón SÍ */
+        font-size: 1.5rem !important;   /* Letra balanceada */
+        padding: 12px !important;
+        margin: 15px auto !important;   /* Genera una bonita separación abajo del SÍ */
+        display: block !important;
+    }
+    
+    /* El reproductor de audio al final */
+    #musicaFondo {
+        margin: 20px auto !important;
+        width: 90% !important;
+    }
 }
