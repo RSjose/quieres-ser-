@@ -152,20 +152,9 @@ button{
 /* AJUSTES EXCLUSIVOS PARA PANTALLAS DE CELULARES */
 /* =================================================== */
 @media screen and (max-width: 768px) {
-    /* Ajusta el título principal para que no se desborde */
+    /* Ajusta el título principal para que quepa en la pantalla del móvil */
     .letra-neon {
         font-size: 32px !important;
-    }
-
-    /* Modifica el contenedor de los botones para poder ordenarlos */
-    .contenedor {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        min-height: 100vh;
-        padding: 20px 10px;
     }
 
     /* Redimensiona la imagen para pantallas móviles */
@@ -175,29 +164,30 @@ button{
         margin: 15px auto;
     }
 
-    /* RE-DISEÑO PARA EL BOTÓN SIII */
+    /* CORRECCIÓN BOTÓN SIII: Le damos un tamaño fijo ideal para pantallas táctiles */
     #yesBtn {
-        transform: none !important; /* Elimina el desplazamiento de PC */
-        width: 70% !important;       /* Deja de ser 10% y toma un ancho cómodo */
-        font-size: 1.5rem !important; /* Reduce la letra xx-large */
-        padding: 12px !important;     /* Reduce el grosor exagerado */
-        margin: 15px auto !important; /* Lo centra y lo separa de los demás elementos */
+        width: 130px !important;      /* Cambiamos el 10% por un tamaño fijo en pixeles */
+        font-size: 1.3rem !important;  /* Ajustamos el tamaño del texto */
+        padding: 12px 0 !important;    /* Reducimos el grosor para que no se deforme */
+        margin: 20px auto !important;
+        transform: none !important;    /* Lo centramos bien en celulares */
         display: block !important;
     }
 
-    /* RE-DISEÑO PARA EL BOTÓN NO */
+    /* CORRECCIÓN BOTÓN NO: ¡Mantiene su libertad para moverse por donde sea! */
     #noBtn {
-        position: relative !important; /* Deja de flotar sobre otros elementos */
-        width: 70% !important;         /* Toma el mismo ancho que el botón SÍ */
-        font-size: 1.5rem !important;   /* Letra balanceada */
-        padding: 12px !important;
-        margin: 15px auto !important;   /* Genera una bonita separación abajo del SÍ */
-        display: block !important;
+        position: absolute !important; /* Mantiene la posición absoluta para que tu JS siga funcionando */
+        width: 130px !important;       /* Mismo tamaño que el SÍ para que se vean simétricos */
+        font-size: 1.3rem !important;  /* Ajustamos el tamaño del texto */
+        padding: 12px 0 !important;    /* Grosor limpio y legible */
+        /* Dejamos que tu script controle las coordenadas top/left para que siga escapando */
     }
     
-    /* El reproductor de audio al final */
+    /* Centramos el reproductor de audio en la parte inferior */
     #musicaFondo {
-        margin: 20px auto !important;
-        width: 90% !important;
+        margin: 30px auto !important;
+        width: 85% !important;
+        display: block !important;
     }
+
 }
