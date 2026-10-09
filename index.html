@@ -10,67 +10,67 @@
     <link rel="shortcut icon" href="img/logo.png">
 </head>
 <body>
+    <!-- Pantalla de bienvenida obligatoria para activar la música -->
+    <div id="pantallaEntrada" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; bg-color: #000; background: black; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h2 style="color: #fff; font-family: sans-serif; margin-bottom: 20px; text-shadow: 0 0 10px #ff007f;">💖 Te han enviado un mensaje...</h2>
+        <button onclick="comenzarExperiencia()" class="bn-neon" style="padding: 15px 30px; font-size: 1.2rem; cursor: pointer;">Abrir con Música 🎵</button>
+    </div>
+
     <div class="contenedor">
-        
-        <class class="container">
+        <!-- Corregido: Se cambió <class class="..."> por <div class="..."> -->
+        <div class="container">
             <h1 class="letra-neon">¿Zae quieres ser mi Novia?</h1>
             <p class="neon3">
                 <span class="flicker1">♣</span>
                 <span class="flicker2">♣</span>
                 <span class="flicker3">♣</span>
             </p>
-        </class>
+        </div>
+        
         <div>
             <img src="img/imagen.png" width="30%" >
             <br>
         </div>
-            <button id="yesBtn" class="bn-neon open-modal" data-open="modal1">SIII</button>
+        
+        <button id="yesBtn" class="bn-neon open-modal" data-open="modal1">SIII</button>
 
-              <div class="modal" id="modal1" data-animation="slideInOutLeft">
-                <div class="modal-dialog">
-                  <header class="modal-header">
+        <div class="modal" id="modal1" data-animation="slideInOutLeft">
+            <div class="modal-dialog">
+                <header class="modal-header">
                     <h2>😏ya somos novios Zae :3🌹🙊</h2>
-                    <button class="close-modal" aria-label="close modal" data-close>
-                      ❌ 
-                    </button>
-                  </header>
-                  <section class="modal-content">
-                    <h3>🌹🌹🌹🌹 Aceptaste Preciosa 🤣 Sabia que lo harias <3
-                        😎😹🐵😺 </h3><hr><hr>
-                  </section>
-                  <footer class="modal-footer">
-                    <button type="button" class="open-modal bn-neon" id="yesBtn" style="align-items: center;" data-open="modal2">
-                            Click!
-                    </button>
-                  </footer>
-                </div>
-              </div>
+                    <button class="close-modal" aria-label="close modal" data-close>❌</button>
+                </header>
+                <section class="modal-content">
+                    <h3>🌹🌹🌹🌹 Aceptaste Preciosa 🤣 Sabia que lo harias &lt;3 😎😹🐵😺 </h3><hr><hr>
+                </section>
+                <footer class="modal-footer">
+                    <button type="button" class="open-modal bn-neon" id="yesBtn" style="align-items: center;" data-open="modal2">Click!</button>
+                </footer>
+            </div>
+        </div>
               
-              <div class="modal" id="modal2" data-animation="mixInAnimations">
-                <div class="modal-dialog">
-                  <header class="modal-header">
-                    <h4>🙊🙊
-                    </h4>
-                    <button class="close-modal" aria-label="close modal" data-close>
-                        ❌  
-                    </button>
-                  </header>
-                  <section class="modal-content">
-                      <img src="img/memee.jpeg" alt="">
-                
-                  </section>
-  
-                </div>
-              </div>
-            <button id="noBtn">NO :(</button>
+        <div class="modal" id="modal2" data-animation="mixInAnimations">
+            <div class="modal-dialog">
+                <header class="modal-header">
+                    <h4>🙊🙊</h4>
+                    <button class="close-modal" aria-label="close modal" data-close>❌</button>
+                </header>
+                <section class="modal-content">
+                    <img src="img/memee.jpeg" alt="">
+                </section>
+            </div>
+        </div>
+        
+        <button id="noBtn">NO :(</button>
 
-    
-    <br><br><br><br>
+        <br><br><br><br>
 
-    <audio autoplay controls>
-        <source src="media/audio.mp3" type="audio/mp3">
-    </audio>
+        <!-- Elemento de audio con ID asignado -->
+        <audio id="musicaFondo" controls style="display: none;">
+            <source src="media/audio.mp3" type="audio/mp3">
+        </audio>
     </div>
+    
     <div class="burbujas">
         <div class="burbuja"></div>
         <div class="burbuja"></div>
@@ -83,8 +83,25 @@
         <div class="burbuja"></div>
         <div class="burbuja"></div>
     </div>
+    
     <script src="src/js.js"></script>
     <script src="src/modal.js"></script> 
+
+    <!-- Script para ocultar la pantalla de inicio y reproducir la música -->
+    <script>
+        function comenzarExperiencia() {
+            var audio = document.getElementById("musicaFondo");
+            var pantalla = document.getElementById("pantallaEntrada");
+            
+            // Intenta reproducir el audio
+            audio.play().catch(function(error) {
+                console.log("El navegador bloqueó el audio automáticamente:", error);
+            });
+            
+            // Desaparece la pantalla negra de bienvenida
+            pantalla.style.display = "none";
+        }
+    </script>
 </body>
 </html>
 
