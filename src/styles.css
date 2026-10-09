@@ -182,10 +182,15 @@ button{
         padding: 10px 0 !important;    /* Grosor estilizado */
     }
     
-    /* El reproductor de audio al final */
+    /* Envía el reproductor de audio al fondo absoluto de la pantalla en celulares */
     #musicaFondo {
-        margin: 20px auto !important;
-        width: 80% !important;
+        position: fixed !important;
+        bottom: 15px !important;    /* Lo separa sutilmente del borde inferior */
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* Lo centra perfectamente horizontal */
+        width: 85% !important;
+        max-width: 280px !important;
+        z-index: 999 !important;    /* Asegura que flote por encima de las burbujas */
         display: block !important;
     }
 }
