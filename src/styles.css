@@ -152,42 +152,40 @@ button{
 /* AJUSTES EXCLUSIVOS PARA PANTALLAS DE CELULARES */
 /* =================================================== */
 @media screen and (max-width: 768px) {
-    /* Ajusta el título principal para que quepa en la pantalla del móvil */
+    /* Ajusta el título principal para que quepa bien */
     .letra-neon {
-        font-size: 32px !important;
+        font-size: 28px !important;
     }
 
-    /* Redimensiona la imagen para pantallas móviles */
+    /* Reduce la imagen en pantallas móviles */
     div img {
-        width: 60% !important; 
-        max-width: 220px;
-        margin: 15px auto;
+        width: 50% !important; 
+        max-width: 180px;
+        margin: 10px auto;
     }
 
-    /* CORRECCIÓN BOTÓN SIII: Le damos un tamaño fijo ideal para pantallas táctiles */
+    /* BOTÓN SIII: Más pequeño, estilizado y centrado */
     #yesBtn {
-        width: 130px !important;      /* Cambiamos el 10% por un tamaño fijo en pixeles */
-        font-size: 1.3rem !important;  /* Ajustamos el tamaño del texto */
-        padding: 12px 0 !important;    /* Reducimos el grosor para que no se deforme */
-        margin: 20px auto !important;
-        transform: none !important;    /* Lo centramos bien en celulares */
+        width: 100px !important;       /* Tamaño compacto */
+        font-size: 1rem !important;    /* Letra normal y bonita, ya no gigante */
+        padding: 10px 0 !important;    /* Menos grosor */
+        margin: 15px auto !important; 
+        transform: none !important;    /* Lo centra en el móvil */
         display: block !important;
     }
 
-    /* CORRECCIÓN BOTÓN NO: ¡Mantiene su libertad para moverse por donde sea! */
+    /* BOTÓN NO: Compacto y configurado para permitir el escape */
     #noBtn {
-        position: absolute !important; /* Mantiene la posición absoluta para que tu JS siga funcionando */
-        width: 130px !important;       /* Mismo tamaño que el SÍ para que se vean simétricos */
-        font-size: 1.3rem !important;  /* Ajustamos el tamaño del texto */
-        padding: 12px 0 !important;    /* Grosor limpio y legible */
-        /* Dejamos que tu script controle las coordenadas top/left para que siga escapando */
+        position: absolute;            /* Quitamos el !important para que JS pueda cambiar left/top libremente */
+        width: 100px !important;       /* Mismo tamaño compacto que el SÍ */
+        font-size: 1rem !important;    /* Letra normal y legible */
+        padding: 10px 0 !important;    /* Grosor estilizado */
     }
     
-    /* Centramos el reproductor de audio en la parte inferior */
+    /* El reproductor de audio al final */
     #musicaFondo {
-        margin: 30px auto !important;
-        width: 85% !important;
+        margin: 20px auto !important;
+        width: 80% !important;
         display: block !important;
     }
-
 }
